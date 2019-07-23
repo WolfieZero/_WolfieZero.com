@@ -1,0 +1,62 @@
+// =============================================================================
+// Generic: Resets
+// =============================================================================
+
+// Remove borders, margin and padding
+// =============================================================================
+
+// Headers
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+// Text
+p,
+blockquote,
+// Code
+code,
+pre,
+// Tables
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+caption,
+// Forms
+form,
+fieldset,
+legend,
+// Everything else
+figure,
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+// Make CTA s use pointer icon
+// =============================================================================
+
+[role="button"],
+button,
+label {
+    cursor: pointer;
+}
+
+// Remove spaces between table cells
+// =============================================================================
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}

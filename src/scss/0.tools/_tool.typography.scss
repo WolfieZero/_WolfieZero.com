@@ -1,0 +1,52 @@
+// ========================================================
+// Tool: Typography
+// ========================================================
+
+@mixin type-branding {
+    font-family: $typography-family-heading;
+    font-weight: $typography-weight-light;
+    text-rendering: optimizelegibility;
+}
+
+@mixin type-heading {
+    @include type-branding;
+}
+
+@mixin type-base {
+    -webkit-font-smoothing: antialiased;
+    font-family: $typography-family-base;
+    font-weight: $typography-weight-normal;
+}
+
+@mixin font-size($font-size, $line-height: '') {
+    font-size: ($font-size / $typography-size-base) + $unit-base;
+
+    @if $line-height == '' {
+        line-height: ceil($font-size / $typography-size-line) * ($typography-size-line / $font-size) * 1em;
+    } @else {
+        @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+            line-height: $line-height;
+        } @else if ($line-height != none and $line-height != false) {
+            @warn 'Warning: "#{$line-height}" is not a valid value for `line-height`.';
+        }
+    }
+}
+
+@mixin font-weight($weight) {
+    @if ($weight == normal) {
+        font-weight: $typography-weight-normal;
+    } @else if ($weight == bold) {
+        font-weight: $typography-weight-bold;
+    } @else if ($weight == light) {
+        font-weight: $typography-weight-light;
+    } @else {
+        @warn "#{$weight} is not a valid font-weight.";
+    }
+}
+
+@mixin truncate($width: 100%, $overflow: ellipsis) {
+    max-width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

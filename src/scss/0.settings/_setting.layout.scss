@@ -1,0 +1,28 @@
+// ========================================================
+// Setting: Layout
+// ========================================================
+
+// Breakpoints
+// ========================================================
+
+$breakpoints: (
+    small: 500px,
+    medium: 800px
+);
+
+// Container
+// ========================================================
+// Names need to match `$breakpoints`
+
+$container-comparison: '>';
+
+$container: (
+    default: (
+        margin-left: auto,
+        margin-right: auto,
+        width: 80%
+    ),
+    medium: (
+        width: 35rem
+    )
+);
