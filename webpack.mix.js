@@ -1,26 +1,33 @@
 // Imports
-// ========================================================
+// =============================================================================
 
 const mix = require('laravel-mix');
 const stylemark = require('stylemark');
 
+// Variables
+// =============================================================================
+
+const production = process.env.NODE_ENV === 'production' ? true : false;
+
 // Helpers
-// ========================================================
+// =============================================================================
 
 const buildStyleGuide = () => {
-    try {
-        stylemark({
-            input: 'src/',
-            output: 'dist/guide',
-            configPath: '.stylemark.yml'
-        });
-    } catch (error) {
-        console.error(error);
+    if (!production) {
+        try {
+            stylemark({
+                input: 'src/',
+                output: 'dist/guide',
+                configPath: '.stylemark.yml'
+            });
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 
 // Mix
-// ========================================================
+// =============================================================================
 
 mix
     .setPublicPath('dist/')
