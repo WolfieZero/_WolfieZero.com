@@ -79,5 +79,7 @@ category: Components
     display: block;
     text-decoration: none;
     transition: background-color $animation-transition;
+    padding-bottom: $spacing/4;
+    padding-top: $spacing/4;
   }
 }
