@@ -43,6 +43,7 @@ mix
     .then(() => {
         buildStyleGuide();
     })
+    .copy('./src/*.html', './dist/')
 ;
 
 // Full API
