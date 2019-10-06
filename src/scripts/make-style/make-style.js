@@ -69,6 +69,13 @@ const titleSlug = slugify(title);
  *
  * @type {String}
  */
+const categorySlug = slugify(categoryInfo.name);
+
+/**
+ * Slugified category single.
+ *
+ * @type {String}
+ */
 const categorySingleSlug = slugify(categoryInfo.single);
 
 /**
@@ -102,11 +109,25 @@ const fileContents = fs.readFileSync(`${__dirname}/component.scss.stub`, { encod
   .replace(/{{blockSlug}}/g, titleSlug)
   .replace(/{{category}}/g, category);
 
+/**
+ * Index file of the category.
+ *
+ * @type {String}
+ */
+const indexFile = `__${categorySlug}.scss`;
+
+/**
+ * Index file path of the category.
+ *
+ * @type {String}
+ */
+const indexFilePath = `${styleDirectory}/${categoryInfo.directoryName}/__${categorySlug}.scss`;
+
 // =============================================================================
 
 console.info(`Making "${title}" within "${category}"`);
 
-const localResolve = `./src/scss/${categoryInfo.directoryName}/${file}`;
+const localFileResolve = `./src/scss/${categoryInfo.directoryName}/${file}`;
 
 try {
   if (!fs.existsSync(categoryPath)) {
@@ -118,11 +139,32 @@ try {
   }
 
   if (fs.writeFileSync(filePath, fileContents)) {
-    throw Error(`Cannot create file ${localResolve}`)
+    throw Error(`Cannot create file ${localFileResolve}`)
   }
 } catch (error) {
   console.error(error.message);
   return;
 }
 
-console.info(`File created: ${localResolve}`);
+console.info(`File created: ${localFileResolve}`);
+
+// =============================================================================
+
+console.info(``);
+
+// =============================================================================
+
+console.info(`Updating index file`);
+
+const localIndexResolve = `./src/scss/${categoryInfo.directoryName}/${indexFile}`;
+
+try {
+  let indexFileContents = fs.readFileSync(indexFilePath, { encoding: 'utf8' })
+  fs.writeFileSync(indexFilePath, indexFileContents + `@import '${file.slice(1)}';\r`);
+} catch(error) {
+  console.error(`Cannot update ${localIndexResolve}`);
+}
+
+console.info(`File updated: ${localIndexResolve}`);
+
+// TODO: Add some sorting here to keep files alphabetical
