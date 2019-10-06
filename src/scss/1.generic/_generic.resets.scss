@@ -83,6 +83,10 @@ figcaption {
 // Setup the body
 // =============================================================================
 
+html {
+  height: 100vh;
+}
+
 body {
   @include reset-to-0;
 
