@@ -18,7 +18,11 @@
     "styleguide": "stylemark -i src -o dist/guide -c .stylemark.yml",
     "styleguide:watch": "stylemark -i src -o dist/guide -c .stylemark.yml -w",
     "lint": "stylelint ./src/scss/**/*.scss",
-    "fix": "prettier './src/**/*.scss' --write"
+    "fix": "prettier './src/**/*.scss' --write",
+    "make": "node ./src/scripts/make-style",
+    "make:object": "node ./src/scripts/make-style Object",
+    "make:component": "node ./src/scripts/make-style Component",
+    "make:view": "node ./src/scripts/make-style View"
   },
   "devDependencies": {
     "resolve-url-loader": "2.3.1",
