@@ -2,13 +2,11 @@
 // CSS
 // =============================================================================
 
-@import
-    '0.settings/__settings',
-    '0.tools/_tools',
-    '1.generic/_generic',
-    '2.elements/_elements',
-    '3.objects/_objects',
-    '4.components/_components',
-    '5.views/_views',
-    '6.utilities/_utilties'
-;
+@import '0.settings/__settings';
+@import '0.tools/_tools';
+@import '1.generic/_generic';
+@import '2.elements/_elements';
+@import '3.objects/_objects';
+@import '4.components/_components';
+@import '5.views/_views';
+@import '6.utilities/_utilties';

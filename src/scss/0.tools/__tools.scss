@@ -1,7 +1,11 @@
+// =============================================================================
+// Tools
+// =============================================================================
+
 @import 'tool.container';
 @import 'tool.hocus';
 @import 'tool.typography';
 
-@import 'tool.vendor.include-media';
-@import 'tool.vendor.str-replace';
+@import '../../../node_modules/include-media/dist/include-media';
+@import '../../../node_modules/str.scss/functions/str-replace';
 @import 'tool.vendor.svg-url';

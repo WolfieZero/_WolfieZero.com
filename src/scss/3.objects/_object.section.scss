@@ -3,15 +3,15 @@
 // =============================================================================
 
 .section {
-    $size: 5em;
+  $size: 5em;
+
+  margin-bottom: $size;
+  margin-top: $size;
+
+  @include media('>small') {
+    $size: 7.5em;
 
     margin-bottom: $size;
     margin-top: $size;
-
-    @include media('>small') {
-        $size: 7.5em;
-
-        margin-bottom: $size;
-        margin-top: $size;
-    }
+  }
 }

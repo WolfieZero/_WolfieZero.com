@@ -6,90 +6,90 @@ category: Components
 
 ```example.html
 
-    <header class="hero">
-        <div class="hero__body container">
-            <h1 class="hero__title">Hero Title</h1>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="hero__body container">
+        <h1 class="hero__title">Hero Title</h1>
+    </div>
+  </header>
 
 ```
 
 ```example-home.html
 
-    <header class="hero">
-        <div class="hero__body container">
-            <h1 class="logo-type home__title">Neil <span>Sweeney</span></h1>
-            <h2 class="home__blurb">Front-end Engineer, Type 1 Diabetic</h2>
-            <nav class="navigation home__navigation">
-                <ul class="navigation__items">
-                    <li class="navigation__item">
-                        <a href="" class="navigation__link">About</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="" class="navigation__link">Blog</a>
-                    </li>
-                    <li class="navigation__item">
-                        <a href="" class="navigation__link">Colophon</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="hero__body container">
+      <h1 class="logo-type home__title">Neil <span>Sweeney</span></h1>
+      <h2 class="home__blurb">Front-end Engineer, Type 1 Diabetic</h2>
+      <nav class="navigation home__navigation">
+        <ul class="navigation__items">
+          <li class="navigation__item">
+            <a href="" class="navigation__link">About</a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">Blog</a>
+          </li>
+          <li class="navigation__item">
+            <a href="" class="navigation__link">Colophon</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
 ```
 
 ```example-single.html
 
-    <header class="single__header single__header--image" style="background-image: url('https://placeimg.com/1000/800/any');">
-        <h1 class="single__title">Visual Studio Code – I think this is the one!</h1>
-        <p class="single__date">January 16 2017</p>
-    </header>
+  <header class="single__header single__header--image" style="background-image: url('https://placeimg.com/1000/800/any');">
+    <h1 class="single__title">Visual Studio Code – I think this is the one!</h1>
+    <p class="single__date">January 16 2017</p>
+  </header>
 
 ```
 */
 
 .hero {
-    align-items: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  // overflow: hidden;
+
+  // Height modifiers
+  // ===========================================================================
+
+  &--full {
+    min-height: 100vh;
+  }
+
+  &--majority {
+    min-height: 75vh;
+  }
+
+  &--half {
+    min-height: 50vh;
+  }
+
+  &--minority {
+    min-height: 25vh;
+  }
+
+  // Elements
+  // ===========================================================================
+
+  &__header,
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &__body {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    // overflow: hidden;
-
-    // Height modifiers
-    // =========================================================================
-
-    &--full {
-        min-height: 100vh;
-    }
-
-    &--majority {
-        min-height: 75vh;
-    }
-
-    &--half {
-        min-height: 50vh;
-    }
-
-    &--minority {
-        min-height: 25vh;
-    }
-
-    // Elements
-    // =========================================================================
-
-    &__header,
-    &__footer {
-        flex-shrink: 0;
-    }
-
-    &__body {
-        display: flex;
-        flex-grow: 1;
-        flex-direction: column;
-        justify-content: center;
-        margin-bottom: 1.5em;
-        margin-top: 1.5em;
-        z-index: 1;
-    }
+    justify-content: center;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    z-index: 1;
+  }
 }

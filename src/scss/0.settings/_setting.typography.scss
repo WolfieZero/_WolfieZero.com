@@ -6,7 +6,8 @@
 // =============================================================================
 
 $typography-brand: Exo;
-$typography-family-base: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+$typography-family-base: -apple-system, system-ui, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 $typography-family-heading: $typography-brand, $typography-family-base;
 $typography-family-code: monospace;
 

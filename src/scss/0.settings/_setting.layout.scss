@@ -6,8 +6,8 @@
 // ========================================================
 
 $breakpoints: (
-    small: 500px,
-    medium: 800px
+  small: 500px,
+  medium: 800px
 );
 
 // Container
@@ -17,12 +17,12 @@ $breakpoints: (
 $container-comparison: '>';
 
 $container: (
-    default: (
-        margin-left: auto,
-        margin-right: auto,
-        width: 80%
-    ),
-    medium: (
-        width: 35rem
-    )
+  default: (
+    margin-left: auto,
+    margin-right: auto,
+    width: 80%
+  ),
+  medium: (
+    width: 35rem
+  )
 );

@@ -1,5 +1,5 @@
 {
-  "extends": "stylelint-config-standard",
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
   "plugins": [
     "stylelint-scss"
   ],
@@ -7,22 +7,9 @@
     "**/*.vendor.*.scss"
   ],
   "rules": {
-    "indentation": 4,
-    "number-leading-zero": "never",
     "at-rule-no-unknown": [true, {
       "ignoreAtRules": ["function", "if", "each", "include", "mixin", "else", "warn"]
     }],
-    "at-rule-empty-line-before": [
-      "always", {
-        "ignoreAtRules": ["function", "if", "each", "include", "mixin", "else", "warn", "import"]
-      }
-    ],
-    "block-opening-brace-space-before": "always",
-    "block-closing-brace-newline-after": [
-      "always", {
-        "ignoreAtRules": [ "if", "else" ]
-      }
-    ],
     "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
     "scss/at-else-closing-brace-space-after": "always-intermediate",
     "scss/at-else-empty-line-before": "never",

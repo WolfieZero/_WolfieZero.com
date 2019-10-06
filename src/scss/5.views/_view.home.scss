@@ -5,112 +5,114 @@ category: Views
 ---
 
 ```example.html
-    <div class="home">
-        <header class="header hero">
-            <div class="hero__body container">
-                <h1 class="home__title">Home <span>Title</span></h1>
-                <h2 class="home__sub-title" pre="pre content of">Sub <span>Title</span></h2>
-            </div>
-        </header>
-    </div>
+  <div class="home">
+    <header class="header hero">
+      <div class="hero__body container">
+        <h1 class="home__title">Home <span>Title</span></h1>
+        <h2 class="home__sub-title" pre="pre content of">Sub <span>Title</span></h2>
+      </div>
+    </header>
+  </div>
 ```
 */
 .home {
-    &__title {
-        @include media('>small') {
-            @include font-size(100px, .8em);
-        }
-        @include media('>medium') {
-            @include font-size(100px);
-        }
-        @include font-size(60px);
-        @include type-branding;
+  &__title {
+    @include media('>small') {
+      @include font-size(100px, 0.8em);
+    }
+    @include media('>medium') {
+      @include font-size(100px);
+    }
+    @include font-size(60px);
+    @include type-branding;
 
-        line-height: .8em;
-        margin-left: -.075em;
+    line-height: 0.8em;
+    margin-left: -0.075em;
+  }
+
+  &__sub-title {
+    @include media('>small') {
+      @include font-size(34px);
+
+      margin-top: 0;
+    }
+    @include media('>medium') {
+      margin-top: -0.5rem;
+    }
+    @include font-size(25px);
+    @include type-branding;
+
+    margin-top: -0.25em;
+
+    &::before {
+      color: $color-white;
+      content: attr(pre);
+      margin-right: 0.3em;
+      opacity: 0.2;
+    }
+  }
+
+  &__title,
+  &__sub-title {
+    &,
+    > span {
+      transition: color $animation-transition;
     }
 
-    &__sub-title {
-        @include media('>small') {
-            @include font-size(34px);
-
-            margin-top: 0;
-        }
-        @include media('>medium') {
-            margin-top: -.5rem;
-        }
-        @include font-size(25px);
-        @include type-branding;
-
-        margin-top: -.25em;
-
-        &::before {
-            color: $color-white;
-            content: attr(pre);
-            margin-right: .3em;
-            opacity: .2;
-        }
+    span {
+      color: $color-brand;
     }
 
-    &__title,
-    &__sub-title {
-        &,
-        > span {
-            transition: color $animation-transition;
-        }
+    &:hover {
+      &,
+      span {
+        color: $color-brand;
+      }
 
-        span {
-            color: $color-brand;
-        }
+      span {
+        color: $color-white;
+      }
+    }
+  }
 
-        &:hover {
-            &,
-            span {
-                color: $color-brand;
-            }
+  &__blurb {
+    @include media('>small') {
+      @include font-size(30px);
 
-            span {
-                color: $color-white;
-            }
-        }
+      margin-top: 1em;
+    }
+    @include font-size(18px);
+    @include type-branding;
+
+    text-transform: lowercase;
+  }
+
+  &__navigation {
+    @include font-size(20px);
+
+    margin-top: 2em;
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: -50px;
+    margin: auto;
+    right: 0;
+    left: 0;
+    fill: $color-white;
+    opacity: 0.05;
+  }
+
+  &__hero {
+    @include media('>small') {
+      min-height: 60vh;
     }
 
-    &__blurb {
-        @include media('>small') {
-            @include font-size(30px);
-
-            margin-top: 1em;
-        }
-        @include font-size(18px);
-        @include type-branding;
-
-        text-transform: lowercase;
-    }
-
-    &__navigation {
-        @include font-size(20px);
-
-        margin-top: 2em;
-    }
-
-    &__logo {
-        position: absolute;
-        bottom: -50px;
-        margin: auto;
-        right: 0;
-        left: 0;
-        fill: $color-white;
-        opacity: .05;
-    }
-
-    &__hero {
-        @include media('>small') {
-            min-height: 60vh;
-        }
-
-        min-height: 50vh;
-        background-color: $color-black;
-
-        background-image: linear-gradient(rgba($color-brand, .35), rgba($color-brand, .1));
-    }
+    min-height: 50vh;
+    background-color: $color-black;
+    background-image: linear-gradient(
+      rgba($color-brand, 0.35),
+      rgba($color-brand, 0.1)
+    );
+  }
 }

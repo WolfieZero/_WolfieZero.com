@@ -4,7 +4,7 @@
 // Loop map and assign attributes
 
 @mixin attribute-map($meta) {
-    @each $attribute, $value in $meta {
-        #{$attribute}: $value;
-    }
+  @each $attribute, $value in $meta {
+    #{$attribute}: $value;
+  }
 }

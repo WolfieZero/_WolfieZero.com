@@ -3,13 +3,13 @@
 // =============================================================================
 
 a {
-    border-bottom: 1px solid transparent;
-    color: $color-base-links;
-    text-decoration: none;
-    // transition: border-bottom-color $animation-transition;
+  border-bottom: 1px solid transparent;
+  color: $color-base-links;
+  text-decoration: none;
+  // transition: border-bottom-color $animation-transition;
 
-    @include hocus {
-        border-bottom-color: $color-base-links;
-        color: $color-brand;
-    }
+  @include hocus {
+    border-bottom-color: $color-base-links;
+    color: $color-brand;
+  }
 }

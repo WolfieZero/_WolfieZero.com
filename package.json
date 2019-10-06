@@ -17,21 +17,25 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "styleguide": "stylemark -i src -o dist/guide -c .stylemark.yml",
     "styleguide:watch": "stylemark -i src -o dist/guide -c .stylemark.yml -w",
-    "lint": "stylelint ./src/scss/**/*.scss"
+    "lint": "stylelint ./src/scss/**/*.scss",
+    "fix": "prettier './src/**/*.scss' --write"
   },
   "devDependencies": {
-    "browser-sync-webpack-plugin": "2.0.1",
-    "laravel-mix": "^4.0.16",
     "resolve-url-loader": "2.3.1",
-    "sass": "^1.21.0",
-    "sass-loader": "7.*",
     "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^6.0.0",
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-scss": "^3.5.3",
-    "stylemark": "^3.1.3"
+    "stylemark": "git+https://github.com/WolfieZero/stylemark"
   },
   "dependencies": {
-    "cross-env": "^5.2.0"
+    "browser-sync-webpack-plugin": "2.0.1",
+    "cross-env": "^5.2.0",
+    "include-media": "^1.4.9",
+    "laravel-mix": "^4.0.16",
+    "sass": "^1.21.0",
+    "sass-loader": "7.*",
+    "str.scss": "^1.0.0"
   }
 }
