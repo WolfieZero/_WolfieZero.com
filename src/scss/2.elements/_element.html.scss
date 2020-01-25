@@ -1,0 +1,13 @@
+// ========================================================
+// Element: HTML
+// ========================================================
+
+html {
+  @include type-base;
+  @include font-size($typography-size-base);
+
+  background-color: $color-base-background;
+  color: $color-base-text;
+  // font-size: ($typography-size-base / $typography-size-base) + $unit-base;
+  font-size: $typography-size-base;
+}

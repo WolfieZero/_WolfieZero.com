@@ -1,0 +1,31 @@
+// ========================================================
+// Setting: Color
+// ========================================================
+
+// Basics
+// ========================================================
+
+$color-white: #fefefd;
+$color-black: #171717;
+
+$color-debug: #c09 !default;
+$color-warning: #f6cd61 !default;
+$color-success: #63a884 !default;
+$color-error: #ee134a !default;
+
+// Brand
+// ========================================================
+
+$color-brand: #a34d88; // #831D85
+$color-brand-primary: $color-brand;
+$color-brand-seconary: #fff;
+$color-brand-opacity: 0.25 !default;
+
+// Base
+// ========================================================
+
+$color-base-text: $color-white;
+$color-base-background: $color-black;
+
+// $color-base-links: $color-brand;
+$color-base-links: #ff66ff;

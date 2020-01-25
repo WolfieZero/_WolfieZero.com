@@ -1,0 +1,32 @@
+// =============================================================================
+// Setting: Typography
+// =============================================================================
+
+// Families
+// =============================================================================
+
+$typography-brand: Exo;
+$typography-family-base: -apple-system, system-ui, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+$typography-family-heading: $typography-brand, $typography-family-base;
+$typography-family-code: monospace;
+
+// Size
+// =============================================================================
+
+$typography-size-base: 20px;
+$typography-size-line: $typography-size-base * 1.75;
+
+$typography-size-h1: 36px;
+$typography-size-h2: 28px;
+$typography-size-h3: 24px;
+$typography-size-h4: 20px;
+$typography-size-h5: 18px;
+$typography-size-h6: 16px;
+
+// Weight
+// =============================================================================
+
+$typography-weight-light: 100;
+$typography-weight-normal: 300;
+$typography-weight-bold: 700;

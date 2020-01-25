@@ -1,0 +1,49 @@
+{
+  "name": "wolfiezero.com",
+  "version": "1.0.0",
+  "description": "Personal site of Neil Sweeney",
+  "author": "Neil Sweeney <neil@wolfiezero.com>",
+  "license": "MIT",
+  "homepage": "https://wolfiezero.com/",
+  "bugs": {
+    "url": "https://github.com/wolfiezero/wolfiezero.com/issues/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfiezero/wolfiezero.com.git"
+  },
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=* npm run build; concurrently \"npm run serve\" \"npm run sass -- --watch\"",
+    "build": "eleventy; npm run sass",
+    "sass": "sass ./src/scss/index.scss ./public/index.css --source-map --style=compressed",
+    "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
+    "make": "node ./src/scripts/make-style",
+    "make:object": "node ./src/scripts/make-style Object",
+    "make:component": "node ./src/scripts/make-style Component",
+    "make:view": "node ./src/scripts/make-style View"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "dayjs": "^1.8.17",
+    "html-minifier": "^4.0.0",
+    "include-media": "^1.4.9",
+    "sass": "^1.21.0",
+    "sass-loader": "7.*",
+    "str.scss": "^1.0.0"
+  },
+  "devDependencies": {
+    "@wolfiezero/eslint-config": "0.0.8",
+    "concurrently": "^5.0.0",
+    "cross-env": "^6.0.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "resolve-url-loader": "^3.1.0",
+    "stylelint": "^9.10.1",
+    "stylelint-config-prettier": "^6.0.0",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-scss": "^3.5.3",
+    "stylemark": "git+https://github.com/WolfieZero/stylemark"
+  }
+}

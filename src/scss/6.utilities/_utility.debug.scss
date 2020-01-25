@@ -1,0 +1,49 @@
+// =============================================================================
+// Utility: Debug
+// =============================================================================
+
+// Displays borders on everything showing spacial awareness of the page
+
+// Variables
+// =============================================================================
+
+$debug: true !default;
+$color-success: #63a884 !default;
+$color-warning: #f6cd61 !default;
+$color-error: #ee134a !default;
+
+// Mixins
+// =============================================================================
+
+@mixin debug-error() {
+  outline: 5px solid $color-error !important;
+}
+
+@mixin debug-warning() {
+  outline: 5px solid $color-error !important;
+}
+
+// Debug display
+// =============================================================================
+
+@if $debug {
+  // Check for `li` outside a list group
+  li {
+    @include debug-error();
+
+    ul > &,
+    ol > & {
+      outline: none !important;
+    }
+  }
+
+  // Image doesn't have an `alt` attribute
+  img:not([alt]) {
+    @include debug-warning();
+  }
+
+  // Displays links with only a `#`, which
+  [href='#'] {
+    @include debug-warning();
+  }
+}

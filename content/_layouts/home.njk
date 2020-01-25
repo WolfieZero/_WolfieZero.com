@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo:100,300" rel="stylesheet">
+    <title>Neil Sweeney // WolfieZero.com</title>
+  </head>
+
+  <body class="home">
+    <header class="hero home__hero">
+      <div class="hero__body container">
+        <h1 class="home__title">
+          Neil
+          <span>Sweeney</span>
+        </h1>
+        <h2 class="home__sub-title" pre="aka">Wolfie<span>Zero</span></h2>
+
+        <p class="home__blurb">software engineer, type 1 diabetic, whiskey drinker</p>
+
+        <div class="logo home__logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 900 900" style="fill-rule: evenodd;">
+            <path d="M555.675,277.566l-212.304,-277.566l-1.73,343.282l-341.641,105.809l343.419,106.005l-0.009,343.074l212.265,-277.559l343.41,105.999l-212.244,-277.518l212.252,-277.53l-343.418,106.004Zm-58.671,171.535l-139.631,408.254l192.966,-252.315l-53.335,-155.939Zm0.004,-0.011l365.56,252.316l-192.966,-252.316l-172.594,0Zm-0.005,0l-451.857,0l312.225,96.376l139.632,-96.376Zm0.006,-0.003l365.56,-252.315l-312.226,96.376l-53.334,155.939Zm0,-0.001l-139.632,-408.254l0,311.878l139.632,96.376Z"/>
+          </svg>
+        </div>
+
+        <nav class="navigation home__navigation">
+          <ul class="navigation__items">
+            <li class="navigation__item">
+              <a href="" class="navigation__link">About</a>
+            </li>
+            <li class="navigation__item">
+              <a href="" class="navigation__link">Blog</a>
+            </li>
+            <li class="navigation__item">
+              <a href="" class="navigation__link">Colophon</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main aria-role="main" class="container section">
+      {%- for post in collections.post -%}
+        <article class="posts-item">
+          <h2 class="posts-item__title">
+            <a class="posts-item__link" href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </h2>
+          <span class="posts-item__meta">{{ post.data.date | readableDate }}
+            <!-- 2017 Jan 16 -->
+          </span>
+        </article>
+      {%- endfor -%}
+      <nav class="pagination pagination--all">
+        <a href="/blog/" class="pagination__link">See all posts</a>
+      </nav>
+    </main>
+
+    <footer class="footer container section">
+      <p>code on
+        <a href="https://github.com/wolfiezero/wolfiezero.com">GitHub</a>
+      </p>
+      <p>Copyright Neil Sweeney</p>
+    </footer>
+  </body>
+
+</html>

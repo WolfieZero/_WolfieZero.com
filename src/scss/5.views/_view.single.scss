@@ -1,0 +1,127 @@
+/*
+---
+name: Single
+category: Views
+---
+
+## With Image
+
+```example-with-image.html
+
+  <div class="single">
+    <header class="single__header single__header--image" style="background-image: url('https://placeimg.com/1000/800/any');">
+      <h1 class="single__title">Single Title</h1>
+      <p class="single__date">January 16 2017</p>
+    </header>
+
+    <div class="single__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+```
+
+## Without Image
+
+```example-without-image.html
+
+  <div class="single">
+    <header class="single__header">
+      <h1 class="single__title">Single Title</h1>
+      <p class="single__date">January 16 2017</p>
+    </header>
+
+    <div class="single__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+```
+*/
+
+.single {
+  &__header {
+    background-image: linear-gradient(
+      rgba($color-brand, 0.25),
+      rgba($color-brand, 0.1)
+    );
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    > {
+      h1,
+      p {
+        @include container;
+      }
+    }
+
+    &--image {
+      padding-top: 10rem;
+      padding-bottom: 4rem;
+
+      &::before {
+        background-image: linear-gradient(
+          rgba($color-black, 0.7),
+          $color-base-background 90%
+        );
+        bottom: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+
+      > * {
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__date {
+    @include type-branding;
+  }
+
+  &__content {
+    > {
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p,
+      blockquote,
+      ul,
+      pre {
+        @include container;
+      }
+
+      p,
+      blockquote,
+      ul,
+      pre {
+        max-width: 55ch;
+      }
+
+      h2 {
+        margin-bottom: 0.5em;
+        margin-top: 1.5em;
+      }
+
+      p {
+        margin-bottom: 1em;
+      }
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80%;
+    }
+  }
+}
