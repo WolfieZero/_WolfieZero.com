@@ -7,3 +7,6 @@ npm-debug.*
 .sass-cache
 node_modules
 public
+
+# Local Netlify folder
+.netlify
