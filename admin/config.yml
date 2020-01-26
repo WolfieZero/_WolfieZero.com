@@ -7,7 +7,7 @@ publish_mode: editorial_workflow
 media_folder: 'content/media'
 public_folder: '/media'
 
-collection:
+collections:
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
