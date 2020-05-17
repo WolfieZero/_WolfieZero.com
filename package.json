@@ -34,6 +34,7 @@
     "stylemark": "git+https://github.com/WolfieZero/stylemark"
   },
   "dependencies": {
+    "@openfonts/exo_all": "^1.44.2",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.2.0",
     "include-media": "^1.4.9",
